@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "PesquisarProdutos";
+}
+
+<h2>PesquisarProdutos</h2>
+
+@using (Ajax.BeginForm("PesquisarProdutos", new AjaxOptions
+{
+    UpdateTargetId = "resultado"
+}))
+{
+    @Html.TextBox("query", null, new { size = 40 })
+    <input type="submit" />
+}
+<div id="resultado">
+</div>
+
+
