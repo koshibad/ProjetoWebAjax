@@ -133,6 +133,7 @@
     <Content Include="Views\Home\MostrarProduto.cshtml" />
     <Content Include="Views\Home\PesquisarProdutos.cshtml" />
     <Content Include="Views\Shared\_ListaProdutos.cshtml" />
+    <Content Include="Views\Home\ListarPorCategoria.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdventureWorks.Context.cs">

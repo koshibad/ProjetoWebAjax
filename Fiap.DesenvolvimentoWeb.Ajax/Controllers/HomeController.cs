@@ -43,5 +43,15 @@ namespace Fiap.DesenvolvimentoWeb.Ajax.Controllers
 
             return View(lista);
         }
+
+        public ActionResult ListarPorCategoria(int? id)
+        {
+            List<Product> lista = Db.ListarProdutosPorCategoria(id);
+            if (Request.IsAjaxRequest())
+                return PartialView("_ListaProdutos", lista);
+
+            ViewBag.CategoryID = new SelectList(lista, "ProductCategoryID", "Name");
+            return View();
+        }
     }
 }

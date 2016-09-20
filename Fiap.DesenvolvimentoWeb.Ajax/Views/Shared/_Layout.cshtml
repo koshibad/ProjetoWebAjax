@@ -23,6 +23,7 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Mostrar Produto", "MostrarProduto")</li>
                     <li>@Html.ActionLink("Pesquisar Produto", "PesquisarProdutos")</li>
+                    <li>@Html.ActionLink("Listar Por Categoria", "ListarPorCategoria")</li>
                 </ul>
             </div>
         </div>
@@ -39,5 +40,13 @@
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
     <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#CategoryID").change(function () {
+                var selecao = $("#CategoryID").val();
+                $("#resultado").load("/Home/ListarPorCategoria/" + selecao);
+            });
+        });
+    </script>
 </body>
 </html>

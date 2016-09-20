@@ -32,5 +32,16 @@ namespace Fiap.DesenvolvimentoWeb.Ajax.DAL
                 return ctx.Product.Where(p => p.Name.StartsWith(query)).ToList<Product>();
             }
         }
+
+        public static List<Product> ListarProdutosPorCategoria(int? query)
+        {
+            using (var ctx = new AdventureWorksLT2008Entities())
+            {
+                if (query == null)
+                    return ctx.Product.ToList<Product>();
+
+                return ctx.Product.Where(p => p.ProductCategoryID == query).ToList<Product>();
+            }
+        }
     }
 }
